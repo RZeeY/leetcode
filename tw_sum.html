@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>two sum</title>
+</head>
+<body>
+</body>
+<script>
+var arr = [10,4,6,9,6,3,5,3];
+var tar = 11;
+var twoSum = function(nums, target) {
+	//第一层循环
+    for(var i = 0; i < nums.length - 1; i++) {
+    	// 第二层循环
+        for(var j = i+1; j <= nums.length - 1; j++) {
+        	// 如果找到两个数相加等于target，就返回两个下标
+            if((nums[i]+nums[j]) == target) {
+                return [i,j];
+            }
+            // 如果没有找到，就返回no resault
+            else if(i == nums.length - 2 && j == nums.length - 1) {
+            	return 'no resault';
+            }
+        }
+    }
+};
+console.log(twoSum(arr, tar));
+</script>
+</html>

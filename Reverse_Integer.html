@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reverse Integer</title>
+</head>
+<body>
+</body>
+<script>
+var num = -96254;
+function reverse(x) {
+    if(x >= 0) {
+        x = Number(x.toString().split("").reverse().join(""));
+        if(x > 2147483648)
+            return 0;
+    }
+    else {
+        x = x.toString().split("");
+        var arr = [];
+        for(var i = 1; i < x.length; i++) {
+            arr[i-1] = x[i];
+        }
+        x = Number(arr.reverse().join(""));
+        if(x > 2147483648)
+            return 0;
+        else 
+            x = Number('-' + x);
+    }
+    return x;
+}
+console.log(reverse(1563847412));
+</script>
+</html>

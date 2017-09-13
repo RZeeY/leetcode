@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Palindrome Number</title>
+</head>
+<body>
+</body>
+<script>
+/**
+ * 判断一个数是否为回文数
+ * @param {number} x
+ * @return {boolean}
+ */
+var num = -2147447412;
+function isPalindrome(x) {
+    var arr1 = [],
+        arr2 = [];
+    if(x < 0) 
+        return false;
+    arr1 = x.toString().split("").reverse();
+    arr2 = x.toString().split("");
+    for(var i = 0; i < arr1.length; i++) {
+        if(arr1[i] != arr2[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(isPalindrome(num));
+</script>
+</html>
