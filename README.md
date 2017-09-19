@@ -28,3 +28,10 @@ return [0, 1].
 例子:
 给定的输入数组数组= [ 3,2,2,3 ]，val = 3
 返回2，且原数组应该变为[2,2]
+
+## implement_strStr()
+一个字符串haystack，与字符串needle
+返回needle在haystack中第一次出现的位置，若没出现则返回-1
+示例：
+yreuhudewj hud
+4
