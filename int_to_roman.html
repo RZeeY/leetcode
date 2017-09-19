@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>int_To_Roman</title>
+</head>
+<body>
+
+</body>
+<script>
+var intNum = 3974;
+
+var intToRoman = function(num) {
+	var romanList = {
+	    1: 		'I',
+	    10: 	'X',
+	    100: 	'C',
+	    1000: 	'M',
+	    5: 		'V',
+	    50: 	'L',
+	    500: 	'D'
+	};
+	var roman = [];
+	var numToArr = num.toString().split('');
+	var numLength = numToArr.length;
+
+	for(var i = 0; i < numLength; i++) {
+		var result = numToArr[i];
+		var divisor = Math.pow(10,(numLength-1-i));
+		var pushNum = '';
+
+		if(result >= 0 && result < 4) {
+			pushNum = '';
+			for(var j = 0; j < result; j++) {
+				pushNum = pushNum + romanList[divisor]
+			}
+			roman.push(pushNum);
+		}
+		else if(result == 4) {
+			pushNum = '';
+			pushNum = romanList[divisor] + romanList[divisor*5];
+			roman.push(pushNum);
+		}
+		else if(result > 4 && result < 9) {
+			pushNum = '';
+			pushNum = romanList[divisor*5];
+			for(var j = 0; j < result-5; j++) {
+				pushNum = pushNum + romanList[divisor]
+			}
+			roman.push(pushNum);
+		}
+		else if(result == 9) {
+			pushNum = '';
+			pushNum = romanList[divisor] + romanList[divisor*10]
+			roman.push(pushNum);
+		}
+	}
+
+	roman = roman.join('');
+	return roman;
+};
+</script>
+</html>
