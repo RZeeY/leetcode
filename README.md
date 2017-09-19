@@ -18,5 +18,5 @@ return [0, 1].
 ## Roman_to_Integer
 给定一个罗马数，转换为十进制整数。（范围 1 to 3999）
 
-## Rint_to_roman
+## int_to_roman
 给定一个十进制整数，转换为罗马数。（范围 1 to 3999）
