@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>remove_element</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+/*
+*给定一个数组和一个值，删除该值的所有实例并返回新长度。
+*不要为另一个数组分配额外的空间，您必须在内存中执行此操作。
+*元素的顺序可以改变。不管你离开以后新的长度。
+*例子:
+*给定的输入数组数组= [ 3,2,2,3 ]，val = 3
+*你的函数应该返回长度为2的数组为2，与前两个元素。
+**/
+var nums = [4,5,4,5];
+var val = 4;
+
+var removeElement = function(nums, val) {
+    var index;
+    var start, count = 0;
+    var isFind = false;
+
+    nums = nums.sort();
+    for(index in nums) {
+        if(nums[index] == val) {
+            if(isFind == false) {
+                start = index;
+                isFind = true;
+            }
+            count++;
+        }
+    }
+
+    if(start != undefined)
+        nums.splice(start, count);
+    return nums.length;
+};
+
+console.log(removeElement(nums, val));
+</script>
+</html>
