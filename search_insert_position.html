@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>search_insert_position</title>
+</head>
+<body>
+</body>
+<script>
+var nums = [1,3];
+var target = 2;
+
+var searchInsert = function(nums, target) {
+    var index;
+    var length = nums.length,
+        max = nums[length-1];
+    for(i in nums) {
+        i = Number(i);
+        if(target > nums[i] && target < nums[i+1])
+            return i+1;
+        if(target < nums[0])
+            return 0;
+        if(target > max)
+            return length;
+        if(target === nums[i])
+            return i;
+    }
+};
+
+console.log(searchInsert(nums, target))
+</script>
+</html>
